@@ -53,19 +53,18 @@ con.connect((err) => {
 //         });
 //     });
 
-// // SELECT Logic with WHERE statement 2
-// con.query(
-//   `SELECT ticker FROM workingqueue WHERE ticker = ?`,
-//   // ["0005.HK"],
-//   ["FB"],
-//   (err,rows) => {
-//       if(err) throw err;  
-//       console.log(rows.length)
-//       if (rows.length > 0) {
-//         console.log(rows[0].ticker)
-//         console.log(typeof(rows[0].ticker))
-//       }
-//   });
+// SELECT Logic with WHERE statement 2
+con.query(`SELECT ticker FROM workingqueue WHERE ticker = ?`,
+  // ["0005.HK"],
+  ["MSFT"],
+  (err,rows) => {
+      if(err) throw err;  
+      console.log(rows.length)
+      if (rows.length > 0) {
+        console.log(rows[0].ticker)
+        console.log(typeof(rows[0].ticker))
+      }
+  });
 
 // // INSERT Logic 1
 // const data = { ticker: 'XYZ', calcDate: '2021-03-31', scoreFull: 95 };

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AJAX/Express Example</title>
+  </head>
+  <body>
+    <form id="signup" method="POST" action="/addUser">
+      <div>
+        <label for="name">Name</label>
+        <input name="name"type="text" id="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input name="email" type="text" id="email" />
+      </div>
+      <div>
+        <label for="mobile">Mobile</label>
+        <input name="mobile" type="text" id="mobile" />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script src="/main.js"></script>
+  </body>
+</html>

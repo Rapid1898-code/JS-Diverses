@@ -1,7 +1,6 @@
 $(document).ready(function () {
   $("form").submit(function (event) {
     $(".form-group").removeClass("has-error");
-    $(".form-group").removeClass("has-success");
     $(".help-block").remove();    
     var formData = {
       name: $("#name").val(),
@@ -11,7 +10,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "process.js",
       data: formData,
       dataType: "json",
       encode: true,
@@ -44,17 +43,16 @@ $(document).ready(function () {
         //   '<div class="alert alert-success">' + 'Sucess!' + "</div>"
         // );
         $("#myForm")[0].reset();
-        // $("#superhero-group").addClass("has-error");
-        $("#superhero-group").addClass("has-success");
+        $("#superhero-group").addClass("has-error");
         $("#superhero-group").append(
           '<div class="help-block">' + "Success!" + "</div>"
         );
         setTimeout(
           function(){
-            $(".form-group").removeClass("has-success");
+            $(".form-group").removeClass("has-error");
             $(".help-block").remove();                           
           }, 
-          5000
+          3000
         );        
       }      
     });

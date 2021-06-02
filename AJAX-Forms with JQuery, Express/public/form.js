@@ -1,27 +1,23 @@
 $(document).ready(function () {
   $("form").submit(function (event) {
     $(".form-group").removeClass("has-error");
+    $(".form-group").removeClass("has-success");
     $(".help-block").remove();    
     var formData = {
       nameForm: $("#name").val(),
       email: $("#email").val(),
       superheroAlias: $("#superheroAlias").val(),
     };
-
-    console.log("Drinnen!")
-
-    // console.log(formData.nameForm)
-    // console.log(formData.email)
-    // console.log(formData.superheroAlias)      
-
+    
     $.ajax({
       type: "POST",
-      url: "process.php",
+      url: "/post/formWork",
       data: formData,
       dataType: "json",
       encode: true,
     }).done(function (data) {
-      // console.log(`DEBUG data ${data}`);
+      
+      console.log(`DEBUG data ${data}`);
 
       if (!data.success) {
         if (data.errors.name) {
@@ -49,16 +45,16 @@ $(document).ready(function () {
         //   '<div class="alert alert-success">' + 'Sucess!' + "</div>"
         // );
         $("#myForm")[0].reset();
-        $("#superhero-group").addClass("has-error");
+        $("#superhero-group").addClass("has-success");
         $("#superhero-group").append(
           '<div class="help-block">' + "Success!" + "</div>"
         );
         setTimeout(
           function(){
-            $(".form-group").removeClass("has-error");
+            $(".form-group").removeClass("has-success");
             $(".help-block").remove();                           
           }, 
-          3000
+          5000
         );        
       }      
     });

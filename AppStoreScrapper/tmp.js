@@ -4,7 +4,7 @@ for (let i=0; i<5; i++) {
 
   store.list({
     collection: store.collection.TOP_FREE_IPAD,
-    category: store.category.GAMES_ACTION,
+    // category: store.category.GAMES_ACTION,
     num: 50
   })
   .then(data => {

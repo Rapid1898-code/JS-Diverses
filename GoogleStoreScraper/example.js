@@ -7,8 +7,8 @@ gplay.list({
   fullDetail: true    
 })
 .then(data => {
-  // console.log(data[0])
-  console.log(Object.keys(data[0]))
+  console.log(data[0])
+  // console.log(Object.keys(data[0]))
 })
 .catch(console.log);  
 

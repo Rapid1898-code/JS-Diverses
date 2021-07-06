@@ -1,8 +1,8 @@
 var gplay = require('google-play-scraper');
 
 gplay.list({
-  category: gplay.category.GAME_ACTION,
-  collection: gplay.collection.TOP_FREE,
+  category: gplay.category.TOP_FREE,
+  collection: gplay.collection.FINANCE,
   num: 2,
   fullDetail: true    
 })
